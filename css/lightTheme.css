@@ -1,0 +1,67 @@
+.switch-label {
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+.switch-track {
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 6, 23, 0.8);
+  border-radius: 12px;
+  display: block;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px 2px rgba(56, 182, 255, 0.5); /* Efecto luminoso */
+}
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(2, 6, 23, 0.15);
+  transition: left 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.moon-icon,
+.sun-icon {
+  position: absolute;
+  font-size: 14px;
+  transition: opacity 0.3s, filter 0.3s;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px rgba(56, 182, 255, 0.8));
+}
+.moon-icon {
+  color: #222;
+  left: 2px;
+  opacity: 1;
+}
+.sun-icon {
+  color: #ffb300;
+  right: 2px;
+  opacity: 0;
+}
+#switch:checked + .switch-label .switch-track {
+  background: rgba(2, 6, 23, 1);
+  box-shadow: 0 0 16px 4px rgba(56, 182, 255, 0.8); /* Más brillo al activar */
+}
+#switch:checked + .switch-label .switch-thumb {
+  left: 23px;
+  background: #ffe066;
+  box-shadow: 0 0 8px #ffe06699;
+}
+#switch:checked + .switch-label .switch-thumb .moon-icon {
+  opacity: 0;
+}
+#switch:checked + .switch-label .switch-thumb .sun-icon {
+  opacity: 1;
+}
+.toggle-switch {
+  z-index: 100;
+}

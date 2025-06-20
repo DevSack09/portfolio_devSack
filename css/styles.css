@@ -651,6 +651,18 @@ footer {
   color: var(--text-secondary);
 }
 
+@media (max-width: 768px) {
+  .toggle-switch {
+    display: block;
+    position: absolute;
+    right: 67px;
+    z-index: 1002;
+  }
+  .menu-open .toggle-switch {
+    position: fixed;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-title {
@@ -689,9 +701,11 @@ footer {
   .social-links {
     display: none;
   }
+
   .menu-btn {
     display: block;
   }
+
   .menu-open .nav-links {
     display: flex;
     flex-direction: column;
@@ -705,6 +719,7 @@ footer {
     z-index: 1000;
     animation: slideDown 0.3s ease;
   }
+
   @keyframes slideDown {
     from {
       opacity: 0;
@@ -773,7 +788,6 @@ footer {
   .menu-btn {
     position: relative;
     width: 30px;
-    height: 20px;
     cursor: pointer;
     z-index: 1001;
   }
@@ -1566,7 +1580,7 @@ body.light-theme {
   --primary: #38b6ff;
   --primary-dark: #1a97e0;
   --dark: #f6f8fa;
-  --dark-light: #e9eef5;
+  --dark-light: #dee4ec;
   --text: #222;
   --text-secondary: rgba(34, 34, 34, 0.7);
 }
